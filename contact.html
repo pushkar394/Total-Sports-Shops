@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total sports Contact </title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- custom css file links -->
+    <link rel="stylesheet" href="contact.css">
+    <style>
+        /* Add more margin to the iframe */
+        iframe {
+            margin-top: 50px;
+        }
+
+        /* Style the form input fields and textarea */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="tel"]:focus,
+        .form-group textarea:focus {
+            border-color: #337ab7;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px rgba(51, 122, 183, 0.5);
+        }
+
+        /* Style the form submit button */
+        .form-group input[type="submit"] {
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #23527c;
+        }
+
+        /* Style the form response message */
+        #form-response {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            display: none;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        #form-response.success {
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+            color: #3c763d;
+        }
+
+        #form-response.error {
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+
+<!-- header section start page -->
+
+<header class="header">
+    <a href="#" class="logo"> <i class="fa-solid fa-baseball-bat-ball"></i> TOTAL SPORTS </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="payment.html">Payment</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+</header>
+
+
+<section class="contact">
+    <div class="container">
+        <div class="contact-form">
+            <h2 style=" color: rgb(1, 21, 21);text-align:center;font-size:35px;font-family:'Times New Roman', Times, serif; font-size: 50px;margin-bottom: 50px;">Contact Us </h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name" style="font-weight: bold;">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"style="font-weight: bold;">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"style="font-weight: bold;">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message"style="font-weight: bold;">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+            <div id="form-response" class="hidden"></div>
+        </div>
+    </div>
+</section>
+
+
+<h2 style=" color: rgb(1, 20, 20);text-align:center;font-size:35px;font-family:'Times New Roman', Times, serif; font-size: 50px;margin-top: 05px;">Reach Us </h2>
+            
+<section class="contact">
+    <div class="icons-container">
+        
+
+        <div class="icons" style="margin-left:100px;">
+            <i class="fas fa-phone"></i>
+            <h3>our number</h3>
+            <p>+91 9594684412</p>
+            <p>+91 3870458520</p>
+        </div>
+
+        <div class="icons"style="margin-left: 20px;margin-right: 20px;" >
+            <i class="fas fa-envelope"></i>
+            <h3>our email</h3>
+            <p>totalsports@gmail.com</p>
+            <p>toalsportsinfo@gmail.com</p>
+            
+        </div>
+
+        <div class="icons"style="margin-right:100px;">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>our address</h3>
+            <p>A-1, 806, Empire Mahal, Dr B. Ambedkar Rd, Dadar TT Cir, Dadar East, Dadar, Mumbai, Maharashtra 400014</p>
+        </div>
+
+    </div>
+    </section>
+    <div style="text-align: center;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.0374842614488!2d72.8459067744274!3d19.018069853790145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ceded93c61db%3A0x1961cac00cb4e504!2sTotal%20Sports%20%26%20Fitness%20Dadar!5e0!3m2!1sen!2sin!4v1720866742364!5m2!1sen!2sin" 
+                width="1320" 
+                height="400" 
+                margin="50"
+                style="border: 1px solid black;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.contact-form');
+            const formResponse = document.getElementById('form-response');
+        
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                form.classList.add('submitted');
+        
+                // Simulate form submission process
+                setTimeout(() => {
+                    formResponse.classList.add('success');
+                    formResponse.innerHTML ="Message sent successfully!";
+                    formResponse.style.display = 'block';
+        
+                    // Clear the form after submission
+                    form.reset();
+        
+                    // Automatically hide the message after 3 seconds
+                    setTimeout(() => {
+                        formResponse.style.display = 'none';
+                        form.classList.remove('submitted');
+                    }, 3000);
+                }, 1000);
+            });
+        });
+        </script>
+        
+
+    <section class="footer" style="margin-top: 20px;">
+        <div class="box-container">
+            <div class="box"style="margin-left: 150px;">
+                <h3>quick links</h3>
+                <a href="index.html"><i class="fas fa-arrow-right"></i>Home</a>
+                <a href="shop.html"><i class="fas fa-arrow-right"></i>Shop</a>
+                <a href="about.html"><i class="fas fa-arrow-right"></i>About</a>
+                <a href="#View"><i class="fas fa-arrow-right"></i>payment</a>
+                <a href="contact.html"><i class="fas fa-arrow-right"></i>Contact</a>
+            </div>
+
+            
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+                <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+            </div>
+
+            <div class="box" style="margin-right: 150px;">
+                <h3>newsletter</h3>
+                <p>subscribe for lastest update</p>
+                <form action="">
+                    <input type="email" placeholder="enter your email address">
+                    <input type="submit" value="subscribe" class="btn">
+                </form>
+                <img decoding="async" src="img/payment.png" class="payments" alt="">
+            </div>
+        </div>
+    </section>
+
+<div class="credit">© 2024. All Rights Reserved.</div>
+
+
+</body>
+</html>

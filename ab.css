@@ -1,0 +1,342 @@
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background:#f4f3e9;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header Section */
+.header {
+    background-color: #09f1de;
+    color: #fff;
+    padding: 1.5rem; /* Increased padding for the header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    margin-left: 200px; /* Position TOTAL SPORTS 200px from left */
+}
+
+.logo {
+    display: inline-block;
+    color: #110101;
+    text-decoration: none;
+    font-size: 2.2rem; /* Increased font size to 2.2rem (approximately 22px) */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Shifted logo 20px to the left */
+}
+
+
+
+.logo i {
+    margin-right: 0.5rem;
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align navigation links at the center */
+    margin:05px;
+    padding: 30x;
+    font-size: 25px;
+   
+}
+
+.navbar a {
+    color: #0a0000;
+    text-decoration: none;
+    font-size: 20px; /* Increased font size for the navigation links */
+    padding: 05px; /* Adjusted padding for better spacing */
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons .fa-bars {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.icons .fa-shopping-cart {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.icons .fa-shopping-cart .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 0.8rem;
+}
+
+.icons .fa-bars,
+.icons .fa-shopping-cart {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.icons .fa-bars:hover,
+.icons .fa-shopping-cart:hover {
+    color: #ff9900; /* Orange color on hover */
+}
+
+.about-us {
+    background-color: #0dfdfd;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.about-us .info-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.about-us .info {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-us .info img {
+    max-width: 100px;
+}
+
+/* Mission and Values Section */
+/* Mission and Values Section */
+.mission-values {
+    background:#f4f3e9;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.mission-values .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px; /* Gap between sections */
+}
+
+.mission-values .mission,
+.mission-values .values,
+.mission-values .partner-logos {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mission-values .mission:hover,
+.mission-values .values:hover,
+.mission-values .partner-logos:hover {
+    transform: translateY(-10px); /* Lift up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.mission-values h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mission-values p,
+.mission-values ul {
+    color: #666;
+    text-align: left;
+}
+
+.mission-values ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.mission-values ul li {
+    margin-bottom: 10px;
+}
+
+.mission-values .partner-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.mission-values .partner-images img {
+    width: 450px; /* Increased max-width for partner images */
+    margin: 10px;
+    height: 450px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mission-values .partner-images img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Footer Section */
+/* original styles */
+
+.footer{
+    background: #2bffea;
+    padding: 20px; /* reduced padding */
+    margin: 20px; /* reduced margin */
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* reduced minmax value */
+    gap: 0.5rem; /* reduced gap value */
+    padding: 20px; /* reduced padding */
+    margin: 20px; /* reduced margin */
+}
+
+.footer .box-container .box h3{
+    font-size: 1.5rem; /* reduced font size */
+    color: #01411C;
+    padding: 0.5rem 0; /* reduced padding */
+}
+
+.footer .box-container .box p{
+    font-size: 1.2rem; /* reduced font size */
+    color: #01411C;
+    padding-bottom: 0.2rem; /* reduced padding */
+}
+
+.footer .box-container .box a{
+    font-size: 1.2rem; /* reduced font size */
+    color: #01411C;
+    padding: 0.5rem 0; /* reduced padding */
+    display: block;
+}
+
+.footer .box-container .box a:hover{
+    color: #01411C;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 1rem; /* reduced padding */
+}
+
+.footer .box-container .box a i{
+    padding-right: 0.3rem; /* reduced padding */
+    color: #01411C;
+}
+
+.footer .box-container .box form input[type="email"]{
+    width: 100%;
+    padding: 0.5rem 1rem; /* reduced padding */
+    font-size: 1.4rem; /* reduced font size */
+    color: #01411C;
+    margin: 0.5rem 0; /* reduced margin */
+    text-transform: none;
+}
+
+.footer .box-container .box .payments{
+    width: 100%;
+    margin-top: 1rem; /* reduced margin */
+}
+
+.credit{
+    text-align: center;
+    background: var(--yellow);
+    color: #01411C;
+    font-size: 1.5rem; /* reduced font size */
+}
+
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 50px;
+    margin-left:20px;
+    margin-right: 20px;}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border: 0.1rem solid rgba(0, 0, 0, 0.7);
+    background: #2bffea;
+    transition: background-color 0.3s ease;
+}
+
+.info:hover {
+    background: #01411C;
+}
+
+.info img {
+    height: 7rem;
+    width: auto; /* Ensure the image maintains its aspect ratio */
+}
+
+.info .content {
+    text-align: center; /* Center align content */
+    margin-top: 1rem;
+}
+
+.info .content h3 {
+    font-size: 2rem;
+    color: #01411C;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.info:hover .content h3 {
+    color: #FFEF2B;
+}
+
+.info .content span {
+    font-size: 1.5rem;
+    color: #01411C;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.info:hover .content span {
+    color: #FFEF2B;
+}
