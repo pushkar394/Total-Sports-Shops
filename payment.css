@@ -1,0 +1,182 @@
+body {
+    background: linear-gradient(135deg, #d310da 0%, #0decf0 100%); /* Gradient background for the body */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Changed the font for a modern look */
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-image: url('products/pay2.jpg');/* White background for the container */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333; /* Dark color for the heading */
+    font-size: 24px; /* Increased font size for the heading */
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-height: 800px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.personal-details,
+.payment-method,
+.payment-summary,
+.grand-total {
+    flex: 1 1 45%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fffbfb8e; /* Light background color for sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px; /* Slightly increased font size for labels */
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.payment-method {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-method label {
+    margin-bottom: 10px;
+}
+
+.payment-method input[type="radio"],
+.payment-method input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.payment-details {
+    display: none;
+}
+
+.payment-summary,
+.grand-total {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: #f2f2f2; /* Slightly darker background for summary and total */
+}
+
+.grand-total {
+    font-weight: bold;
+    border-color: aqua;
+    max-width: 300px;
+    margin: 20px auto;
+    color: #007bff; /* Bold color for the grand total */
+    font-size: 18px; /* Increased font size for better emphasis */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.personal-details:hover,
+.payment-method:hover,
+.payment-summary:hover,
+.grand-total:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Styles for UPI Payment Method */
+#payment-upi:checked ~ .payment-details {
+    display: block;
+    flex: 1 1 100%;
+}
+#payment-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+#payment-message p {
+    font-weight: bold;
+    color: #008000;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Optional: Add animation for showing the message */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#payment-message.show {
+    display: block;
+    animation: slideDown 0.5s ease-in-out;
+}
+.hidden {
+    display: none;
+}

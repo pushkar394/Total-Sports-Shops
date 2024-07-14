@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css"> <!-- Link your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Details</h2>
+        <form id="payment-form">
+            <div class="personal-details">
+                <label for="name" style="font-weight: bold;">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+            </div>
+            
+            <div class="payment-method">
+                <h3>Select Payment Method:</h3>
+                <input type="radio" id="upi" name="payment-method" value="upi" required>
+                <label for="upi">UPI</label><br>
+                <input type="radio" id="cod" name="payment-method" value="cod">
+                <label for="cod">Cash on Delivery</label><br>
+                <input type="radio" id="card" name="payment-method" value="card">
+                <label for="card">Credit/Debit Card</label><br>
+            </div>
+            
+            <div id="upi-details" style="display: none;">
+                <label for="upi-id" style="font-weight:bold;color:black;">UPI ID:</label>
+                <input type="text" id="upi-id" name="upi-id">
+            </div>
+            
+            <div id="card-details" style="display: none;">
+                <label for="card-number" style="font-weight:bold;color:black;">Card Number:</label>
+                <input type="text" id="card-number" name="card-number">
+                <br>
+                <label for="cvv" style="font-weight:bold;color:black;">CVV:</label>
+                <input type="text" id="cvv" name="cvv">
+                <br>
+                <label for="MM/YY" style="font-weight:bold;color:black;">Card Validity:</label>
+                <input type="text" id="MM/YY" name="MM/YY" placeholder="MM/YY">
+            </div>
+            
+            <div id="cod-details" style="display: none;">
+                <!-- No details required for COD -->
+            </div>
+            
+            <div class="payment-summary">
+                <h3>Payment Summary</h3>
+                <p>Total Amount: ₹<span id="total-amount">0</span></p>
+                <p>Delivery Charge: ₹<span id="delivery-charge">100</span></p> <!-- Example delivery charge -->
+                <p>Packaging Charge: ₹<span id="packaging-charge">70</span></p> <!-- Example packaging charge -->
+            </div>
+            <div class="grand-total">
+                <p id="grand-total" style="padding-top: 105px; margin:2px;">Grand Total: ₹ 0.00</p>
+            </div>
+            
+            <button type="submit" id="pay-button">Make Payment</button>
+        </form>
+
+        <div id="payment-message" class="hidden">
+            <p>Payment Successful!!</p>
+            <p>Order Confirmed!!</p>
+        </div>
+        
+    </div>
+    <script>
+        const upiRadio = document.getElementById('upi');
+        const cardRadio = document.getElementById('card');
+        const codRadio = document.getElementById('cod');
+    
+        const upiDetails = document.getElementById('upi-details');
+        const cardDetails = document.getElementById('card-details');
+        const codDetails = document.getElementById('cod-details');
+    
+        upiRadio.addEventListener('click', function() {
+            upiDetails.style.display = 'block';
+            cardDetails.style.display = 'none';
+            codDetails.style.display = 'none';
+        });
+    
+        cardRadio.addEventListener('click', function() {
+            upiDetails.style.display = 'none';
+            cardDetails.style.display = 'block';
+            codDetails.style.display = 'none';
+        });
+    
+        codRadio.addEventListener('click', function() {
+            upiDetails.style.display = 'none';
+            cardDetails.style.display = 'none';
+            codDetails.style.display = 'block';
+        });
+    
+        const totalAmountElement = document.getElementById('total-amount');
+        const deliveryChargeElement = document.getElementById('delivery-charge');
+        const packagingChargeElement = document.getElementById('packaging-charge');
+        const grandTotalElement = document.getElementById('grand-total');
+    
+        let totalAmount = localStorage.getItem('totalAmount')? parseFloat(localStorage.getItem('totalAmount')) : 0;
+        let deliveryCharge = 100; // fixed delivery charge
+        let packagingCharge = 70; // fixed packaging charge
+    
+        totalAmountElement.innerText = ` ${totalAmount.toFixed(2)}`; //displaying Total Amount:
+    
+        // function to update grand total
+        function updateGrandTotal() {
+            const grandTotal = totalAmount + deliveryCharge + packagingCharge;
+            grandTotalElement.innerText = `Grand Total: ₹ ${grandTotal.toFixed(2)}`;
+        }
+    
+        // update grand total on page load
+        updateGrandTotal();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('payment-form');
+            const paymentMessage = document.getElementById('payment-message');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Perform any necessary validation or processing here
+
+                // Simulate a successful payment (for demonstration purposes)
+                // You would typically handle this with your backend or payment gateway integration
+                setTimeout(function() {
+                    paymentMessage.classList.remove('hidden'); // Show payment message
+                }, 1000); // Adjust delay as needed
+
+                // Optional: Clear form fields after successful submission
+                form.reset();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set Credit Card as default selected option
+            document.querySelector('input[value="credit-card"]').checked = true;
+            
+            // Show corresponding payment details initially
+            showPaymentDetails('credit-card');
+        });
+
+        // Function to show payment details based on selected payment method
+        function showPaymentDetails(method) {
+            // Hide all payment details
+            document.querySelectorAll('.payment-details').forEach(function(detail) {
+                detail.style.display = 'none';
+            });
+            
+            // Show the selected payment method details
+            document.getElementById('payment-details-' + method).style.display = 'block';
+        }
+
+        // Event listener for payment method change
+        document.querySelectorAll('input[name="payment-method"]').forEach(function(input) {
+            input.addEventListener('change', function() {
+                showPaymentDetails(this.value);
+            });
+        });
+
+        document.getElementById('pay-button').addEventListener('click', function() {
+            document.getElementById('payment-message').classList.add('show');
+        });
+    </script>
+    <script src="script.js"></script> <!-- Link your JavaScript file -->
+</body>
+</html>

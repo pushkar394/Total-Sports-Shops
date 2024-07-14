@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total sports Shop </title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="payment.js"></script>
+    <script src="script.js"></script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 300px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item button {
+            background: red;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .cart-total {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <i class="fa-solid fa-baseball-bat-ball"></i> TOTAL SPORTS </a>
+    
+        <nav class="navbar">
+            <a href="index.html" >Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="payment.html">payment</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+    
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    
+
+    <h2 id = cricket style="font-size: 50px;">Cricket Products</h2>
+    <div class="container" id="cricket-products">
+        <!-- Cricket Products -->
+        <div class="product" data-category="cricket" data-name="Cricket Bat" data-price="1500">
+            <img src="products/bat1.jpeg" alt="Cricket Bat">
+            <h3>Cricket Bat</h3>
+            <p>₹1500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Ball" data-price="300">
+            <img src="products/ball.webp" alt="Cricket Ball">
+            <h3>Cricket Ball</h3>
+            <p>₹300</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Helmet" data-price="1200">
+            <img src="products/helmet.jpeg" alt="Cricket Helmet">
+            <h3>Cricket Helmet</h3>
+            <p>₹1200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Gloves" data-price="800">
+            <img src="products/gloves.jpeg" alt="Cricket Gloves">
+            <h3>Cricket Gloves</h3>
+            <p>₹800</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Pads" data-price="1000">
+            <img src="products/pads.jpeg" alt="Cricket Pads">
+            <h3>Cricket Pads</h3>
+            <p>₹1000</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Stumps" data-price="700">
+            <img src="products/stumps.jpg" alt="Cricket Stumps">
+            <h3>Cricket Stumps</h3>
+            <p>₹700</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Shoes" data-price="2000">
+            <img src="products/shoes.webp" alt="Cricket Shoes">
+            <h3>Cricket Shoes</h3>
+            <p>₹2000</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Kit Bag" data-price="2500">
+            <img src="products/bit.webp" alt="Cricket Kit Bag">
+            <h3>Cricket Kit Bag</h3>
+            <p>₹2500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Cap" data-price="300">
+            <img src="products/cap1.jpeg" alt="Cricket Cap">
+            <h3>Cricket Cap</h3>
+            <p>₹300</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Jersey" data-price="1000">
+            <img src="products/jersy.jpeg" alt="Cricket Jersey">
+            <h3>Cricket Jersey</h3>
+            <p>₹1000</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Trousers" data-price="800">
+            <img src="products/trouser.jpeg" alt="Cricket Trousers">
+            <h3>Cricket Trousers</h3>
+            <p>₹800</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Sweater" data-price="1200">
+            <img src="products/sweater.jpg" alt="Cricket Sweater">
+            <h3>Cricket Sweater</h3>
+            <p>₹1200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Socks" data-price="200">
+            <img src="products/socks.jpg" alt="Cricket Socks">
+            <h3>Cricket Socks</h3>
+            <p>₹200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="cricket" data-name="Cricket Bag" data-price="1800">
+            <img src="products/bag.jpeg" alt="Cricket Bag">
+            <h3>Cricket Bag</h3>
+            <p>₹1800</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        
+    </div>
+
+
+    <h2 style="font-size: 50px;">Tennis Products</h2>
+    <div class="container" id="tennis-products">
+        <!-- Tennis Products -->
+        <div class="product" data-category="tennis" data-name="Tennis Racket" data-price="2000">
+            <img src="products/racket.jpeg" alt="Tennis Racket">
+            <h3>Tennis Racket</h3>
+            <p>₹2000</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Ball" data-price="150">
+            <img src="products/t ball.jpeg" alt="Tennis Ball">
+            <h3>Tennis Ball</h3>
+            <p>₹150</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Shoes" data-price="3000">
+            <img src="products/t shoes.jpeg" alt="Tennis Shoes">
+            <h3>Tennis Shoes</h3>
+            <p>₹3000</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Bag" data-price="2500">
+            <img src="products/t bag.jpeg" alt="Tennis Bag">
+            <h3>Tennis Bag</h3>
+            <p>₹2500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Cap" data-price="500">
+            <img src="products/t cap.jpeg" alt="Tennis Cap">
+            <h3>Tennis Cap</h3>
+            <p>₹500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Towel" data-price="400">
+            <img src="products/towel.jpeg" alt="Tennis Towel">
+            <h3>Tennis Towel</h3>
+            <p>₹400</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Wristband" data-price="150">
+            <img src="products/wrist-band.avif" alt="Tennis Wristband">
+            <h3>Tennis Wristband</h3>
+            <p>₹150</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Headband" data-price="200">
+            <img src="products/t handband.jpg" alt="Tennis Headband">
+            <h3>Tennis Headband</h3>
+            <p>₹200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Socks" data-price="100">
+            <img src="products/t socks.jpeg" alt="Tennis Socks">
+            <h3>Tennis Socks</h3>
+            <p>₹100</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Net" data-price="3500">
+            <img src="products/t net.jpg" alt="Tennis Net">
+            <h3>Tennis Net</h3>
+            <p>₹3500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Shorts" data-price="800">
+            <img src="products/shorts t.jpg" alt="Tennis Shorts">
+            <h3>Tennis Shorts</h3>
+            <p>₹800</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Shirt" data-price="1200">
+            <img src="products/t shirt.jpeg" alt="Tennis Shirt">
+            <h3>Tennis Shirt</h3>
+            <p>₹1200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis Sweatband" data-price="150">
+            <img src="products/s band.jpg" alt="Tennis Sweatband">
+            <h3>Tennis Sweatband</h3>
+            <p>₹150</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="tennis" data-name="Tennis String" data-price="400">
+            <img src="products/t net.jpg" alt="Tennis String">
+            <h3>Tennis String</h3>
+            <p>₹400</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <h2 style="font-size: 50px;" >Swimming Products</h2>
+    <div class="container" id="swimming-products">
+        <!-- Swimming Products -->
+        <div class="product" data-category="swimming" data-name="Swim Goggles" data-price="800">
+            <img src="products/goggles.jpg" alt="Swim Goggles">
+            <h3>Swim Goggles</h3>
+            <p>₹800</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Cap" data-price="400">
+            <img src="products/swim cap.jpg" alt="Swim Cap">
+            <h3>Swim Cap</h3>
+            <p>₹400</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Fins" data-price="1500">
+            <img src="products/fins.jpeg" alt="Swim Fins" style="height: 200px;">
+            <h3>Swim Fins</h3>
+            <p>₹1500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Snorkel" data-price="1200">
+            <img src="products/sornel.jpg" alt="Swim Snorkel">
+            <h3>Swim Snorkel</h3>
+            <p>₹1200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Kickboard" data-price="700">
+            <img src="products/kick.jpeg" alt="Swim Kickboard">
+            <h3>Swim Kickboard</h3>
+            <p>₹700</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Paddles" data-price="900">
+            <img src="products/paddles.jpeg" alt="Swim Paddles">
+            <h3>Swim Paddles</h3>
+            <p>₹900</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Backpack" data-price="2500">
+            <img src="products/backpack.jpeg" alt="Swim Backpack"style="height: 200px;">
+            <h3>Swim Backpack</h3>
+            <p>₹2500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Trunks" data-price="800">
+            <img src="products/trunks.jpg" alt="Swim Trunks">
+            <h3>Swim Trunks</h3>
+            <p>₹800</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Shirt" data-price="1200">
+            <img src="products/s shirt1.jpeg" alt="Swim Shirt">
+            <h3>Swim Shirt</h3>
+            <p>₹1200</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Towel" data-price="500">
+            <img src="products/towel.jpeg" alt="Swim Towel">
+            <h3>Swim Towel</h3>
+            <p>₹500</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="swimming" data-name="Swim Earplugs" data-price="200">
+        <img src="products/ear.webp" alt="Swim Earplugs">
+        <h3>Swim Earplugs</h3>
+        <p>₹200</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-category="swimming" data-name="Swim Nose Clip" data-price="150" style="height: 200px;">
+        <img src="products/nose.jpeg" alt="Swim Nose Clip">
+        <h3>Swim Nose Clip</h3>
+        <p>₹150</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-category="swimming" data-name="Swim Gloves" data-price="300">
+        <img src="products/s gloves.jpeg" alt="Swim Gloves">
+        <h3>Swim Gloves</h3>
+        <p>₹300</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-category="swimming" data-name="Swim Suit" data-price="1500">
+        <img src="products/swim suit.jpeg" alt="Swim Suit">
+        <h3>Swim Suit</h3>
+        <p>₹1500</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    
+</div>
+
+<div class="cart" id="cart">
+    <h2 style="font-weight: bold;">Your Cart</h2>
+    <div id="cart-items" class="cart-items">
+        <!-- Cart items dynamically generated here -->
+    </div>
+    <div class="cart-total" id="cart-total">
+        <p>Total: ₹<span id="total-amount">0</span></p>
+        <p>GST (18%): ₹<span id="gst-amount">0</span></p>
+        <hr>
+        <p>Grand Total: ₹<span id="grand-total">0</span></p>
+    </div>
+   <a href="payment.html" id="checkout-button"><button class="checkout-button" >Proceed to Payment </button> </a>
+</div>
+
+
+
+
+<footer>
+    <p>&copy; 2024 Total sports. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
